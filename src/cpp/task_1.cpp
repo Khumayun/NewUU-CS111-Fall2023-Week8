@@ -25,7 +25,14 @@ private:
 
 
     void printHelper(NodePtr root) {
-        // write your code here
+        if(curr==TNULL){
+            return;
+        }
+        cout<< "(";
+        cout << curr->data << " (" << ((curr->color == 0)? "BLACK": "RED") << ")";
+        printHelper(curr->left);
+        printHelper(curr->right);
+        cout<< ")";
     }
 
 public:
@@ -57,6 +64,6 @@ public:
     }
 
     void printTree() {
-        // write your code here
+        printHelper(root);
     }
 };
